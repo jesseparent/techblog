@@ -29,6 +29,14 @@ a:hover {
   color: var(--secondary-color);
 }
 
+a.reverse {
+  color: var(--tertiary-color);
+}
+
+a.reverse:hover {
+  color: brown;
+}
+
 article {
   border: 3px solid var(--tertiary-color);
 }
@@ -177,6 +185,7 @@ main {
 .comment {
   padding: 1%;
   margin-bottom: 1%;
+  border: 3px solid var(--tertiary-color);
 }
 
 .comment:nth-child(odd) {

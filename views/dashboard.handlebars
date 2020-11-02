@@ -15,10 +15,9 @@
 </section>
 {{#if posts.length}}
 <section>
-  <h2>Your Posts</h2>
+  <h2>Your Posts (Click on post to edit)</h2>
   {{#each posts as |post|}}
-  {{> post-info post}}
-  <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+  {{> post-info post dir="dashboard/edit"}}
   {{/each}}
 </section>
 {{/if}}
