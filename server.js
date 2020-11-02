@@ -19,8 +19,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Session info
 const sess = {
-  secret: 'Super secret secret',
-  cookie: {},
+  secret: 'This is a secret that I cannot store in the env file because Heroku',
+  cookie: {
+    maxAge: 1000 * 60 * 10 // Expire after 10 minutes (1000 ms in a second * 60 seconds * 10 minutes)
+  },
+  rolling: true, // If the user is using the web site, reset the maxAge
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
