@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 const sess = {
   secret: 'This is a secret that I cannot store in the env file because Heroku',
   cookie: {
-    maxAge: 1000 * 60 * 10 // Expire after 10 minutes (1000 ms in a second * 60 seconds * 10 minutes)
+    maxAge: 1000 * 60 * 60 // Expire after one hour (1000 ms in a second * 60 seconds * 60 minutes)
   },
   rolling: true, // If the user is using the web site, reset the maxAge
   resave: false,

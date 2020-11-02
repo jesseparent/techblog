@@ -2,24 +2,35 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #ccffe5;
+  --secondary-color: #99ffcc;
+  --tertiary-color: #331900;
+}
+
 body,
 html {
   height: 100%;
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  color: #333;
+  color: var(--tertiary-color);
+  background-color: var(--primary-color);
 }
 
 a {
   text-decoration: none;
-  color: #225ca3;
+  color: var(--primary-color);
   font-weight: bold;
   transition: color 0.1s;
 }
 
 a:hover {
-  color: #3486eb;
+  color: var(--secondary-color);
+}
+
+article {
+  border: 3px solid var(--tertiary-color);
 }
 
 button {
@@ -78,20 +89,35 @@ form label {
 }
 
 header {
-  border-bottom: 1px solid #ccc;
-  display: flex;
+  background-color: var(--tertiary-color);
+  display: block;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1%;
+  padding: 1% 3%;
 }
 
 header h1 {
-  font-size: 1em;
+  font-size: 1.5em;
+  background-color: var(--primary-color);
+  color: var(--tertiary-color);
+  width: fit-content;
+  border-radius: 5px;
+  padding: 5px 10px;
+  box-shadow: 5px 5px rgba(136, 131, 131, 0.5);
+}
+
+nav {
+  display: flex;
+  align-items: center;
 }
 
 main {
   flex: 1;
   padding: 2% 4%;
+}
+
+.nav-link {
+  padding: 0 25px 0 0;
 }
 
 .btn-no-style {
@@ -100,7 +126,7 @@ main {
   padding: 0;
   cursor: pointer;
   text-decoration: none;
-  color: #225ca3;
+  color: var(--primary-color);
   font-size: 100%;
   font-weight: bold;
   transition: color 0.1s;
@@ -109,7 +135,7 @@ main {
 
 .btn-no-style:hover {
   background: none;
-  color: #3486eb;
+  color: var(--secondary-color);
 }
 
 .delete-post-btn {
@@ -125,10 +151,18 @@ main {
   line-height: 150%;
 }
 
+.post .title {
+  font-size: 90%;
+  color: var(--primary-color);
+  background-color: var(--tertiary-color);
+  display: flex;
+  justify-content: space-between;
+}
+
 .post .title span {
   font-style: italic;
   font-size: 90%;
-  color: #7d7d7d;
+  justify-content: left;
 }
 
 .edit-link {
@@ -155,18 +189,18 @@ main {
   opacity: 0.6;
 }
 
+.content {
+  font-size: 90%;
+  margin-bottom: 0.5%;
+  color: var(--tertiary-color);
+  padding: 1%;
+  margin-bottom: 1%;
+}
+
 .new-post-form input {
   width: 300px;
 }
 
 .edit-post-form {
   margin-bottom: 5%;
-}
-
-footer {
-  border-top: 1px solid #ccc;
-  display: flex;
-  justify-content: center;
-  padding: 1%;
-  font-size: 110%;
 }
